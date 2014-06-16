@@ -26,19 +26,12 @@ var mathChart = {
 	
 	var generatePath = function(svg, data)
 	{
-		var paths=[]
+		var paths=[];
+		var dd="";
 		for(i=0; i<data.data.length; ++i)
 		{
-			var dd = ""
-			if(i == 0)
-			{
-				dd = dd + "M "+ data.data[i].join(" ");
-			}
-			else
-			{
-				dd = dd + "L "+ data.data[i].join(" ");
-			}
-			path = document.createElementNS("xmlns","path");
+			var dd = data.data.join(" ");
+			path = document.createElementNS("xmlns","polyline");
 			path.setAttribute("d", dd);
 			path.setAttribute("stroke", data.color);
 			path.setAttribute("stroke-width", data.width);
