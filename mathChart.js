@@ -31,9 +31,9 @@ var mathChart = {
 	var generatePath = function(svg, data)
 	{
 		var paths=[];
-		var dd="";
 		for(i=0; i<data.data.length; ++i)
 		{
+			var dd="";
 			var dd = data.data.join(" ");
 			path = document.createElementNS("xmlns","polyline");
 			path.setAttribute("d", dd);
