@@ -14,9 +14,9 @@
 
 
 var mathChart = {
+	var xmlns="https://www.w3.org/2000/svg";
 	var insertchart = function(canvas,data)
 	{
-		var xmlns="https://www.w3.org/2000/svg";
 		var svg = document.createElementNS(xmlns,"svg");
 		svg.height = canvas.clientHeight;
 		svg.width = canvas.clientWidth;
