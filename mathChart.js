@@ -33,8 +33,17 @@ var mathChart = {
 		var paths=[];
 		for(i=0; i<data.data.length; ++i)
 		{
-			var dd="";
-			var dd = data.data.join(" ");
+			if(data.data[i][0].length == 2)
+			{
+				var dataTrans = transferData2D(svg, data.range, data.data[i]);
+				var dd = dataTrans.join(" ");
+			}
+			else
+			{
+				var dataTrans = transferData3D(svg, data.range, data.data[i]);
+				var dd = dataTrans.join(" ");
+				
+			}
 			path = document.createElementNS("xmlns","polyline");
 			path.setAttribute("d", dd);
 			path.setAttribute("stroke", data.color);
