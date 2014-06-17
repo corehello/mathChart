@@ -51,5 +51,15 @@ var mathChart = {
 			paths.push(path);
 		}
 		return paths;
+	};
+	
+	var transferData2D = function(svg, range, data)
+	{
+			
+	}
+	
+	var transferData3D = function(svg, range, data)
+	{
+		
 	}
 }
