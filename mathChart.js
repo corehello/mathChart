@@ -1,6 +1,7 @@
 /*
 	mathChart.js 
 	author: corehello(corehello@gmail.com)
+	argument:
 	data = 
 	{
 		range : [[0,1],[2,3]];
@@ -53,13 +54,39 @@ var mathChart = {
 		return paths;
 	};
 	
+    var adaptRange = function(x,y,range, data)
+    {
+        if (range.length == 0)
+        {
+            var r_x = [];
+            var r_y = [];
+            for (var i=0;i<data.length; ++i)
+            {
+                for (var j=0; j<data[0].length; ++i)
+                {
+                    r_x.push(data[i][j][0]);
+                    r_y.push(data[i][j][1]);
+                }
+            }
+            r_x.sort(function(a,b){return a-b});
+            r_y.sort(function(a,b){return a-b});
+            rr =  [[r_x[0],r_x[r_x.length]],[r_y[0],r_y[r_y.length*3/2]]]；
+        }
+        else
+        {
+            rr =  range;
+        }
+
+    }
+
 	var transferData2D = function(svg, range, data)
 	{
-			
+	    range_r = adaptRange(svg.width, svg.height, range, data);
+        
 	}
 	
 	var transferData3D = function(svg, range, data)
 	{
-		
+	    range_r = adaptRange(svg.width, svg.height, range, data);
 	}
 }
