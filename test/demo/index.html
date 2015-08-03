@@ -1,0 +1,19 @@
+<html>
+<head>
+  <script src="/lib/mathChart.js"></script>
+</head>
+<body>
+  <section><h1>this is just a test</h1></section>
+  <div id="canvas" style="width:300px;height:300px;border:solid black 1px;"></div>
+  <script type="text/javascript">
+      var pp = document.getElementById("canvas");
+      data = {
+        range : [[0,300],[0,300]],
+        data: [mathChart.generateData(Math.sin)],
+        color: "black",
+        width: "1"
+      };
+      mathChart.insertChart(pp, data);
+  </script>
+</body>
+</html>
